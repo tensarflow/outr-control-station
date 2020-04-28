@@ -29,7 +29,7 @@ def talker():
     print("Give direction...")
     while not rospy.is_shutdown():
 
-        input_key = cv2.waitKey(250)
+        input_key = cv2.waitKey(1)
 
         if input_key == 2490368:
             print(u" \u2191 at " + str(pwm))
@@ -69,11 +69,11 @@ def talker():
                 print("Changing PWM to " + pwm_input)
                 pwm = int(pwm_input)
 
-        else:
-            pub_f.publish(0)
-            pub_b.publish(0)
-            pub_l.publish(0)
-            pub_r.publish(0)
+        # else:
+        #     pub_f.publish(0)
+        #     pub_b.publish(0)
+        #     pub_l.publish(0)
+        #     pub_r.publish(0)
 
 
 if __name__ == '__main__':
